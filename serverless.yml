@@ -1,0 +1,34 @@
+service: playground
+frameworkVersion: "3"
+useDotenv: true
+
+custom:
+  esbuild:
+    config: "./esbuild.config.js"
+    sourcemap: true
+
+  serverless-offline:
+    noAuth: true
+
+plugins:
+  - serverless-esbuild
+  - serverless-offline
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  architecture: x86_64
+  runtime: nodejs18.x
+  region: ap-southeast-1
+  stage: local
+
+functions:
+  memoize:
+    handler: src/memoize/lambda.handler
+    timeout: 30
+    events:
+      - http:
+          method: ANY
+          path: /{path+}

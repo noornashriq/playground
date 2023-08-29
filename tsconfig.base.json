@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.node18.json",
+  "exclude": ["node_modules", "**/*/dist", "**/*.test.ts"],
+  "compilerOptions": {
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": true
+  }
+}
