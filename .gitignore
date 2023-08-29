@@ -264,3 +264,4 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/node,macos,windows,linux,sonar,sonarqube,visualstudiocode,database
 
 .esbuild
+.build
